@@ -6,8 +6,13 @@
 <p><strong>Number of guests: </strong><%= @flat.number_of_guests%></p>
 
 
-<p><%= link_to "+ Add flat", new_flat_path(@flat), class: "btn btn-primary" %></p>
+
 
 <p><%= link_to "Update this flat", edit_flat_path(@flat), class: "btn btn-primary" %></p>
 
 <p><%= link_to "Return at list flats", flats_path, class: "btn btn-primary" %></p>
+
+  <%= link_to "Delete",
+    flat_path(@flat),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
